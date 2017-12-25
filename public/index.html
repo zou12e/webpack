@@ -8,4 +8,57 @@
 	<div id='root'></div>
     <script src="bundle.js"></script>
 </body>
+
+	<script type="text/javascript">
+		
+
+
+		var src = "http://zourunze.com";
+
+
+		 window.onmessage = function(e){  
+
+
+		 	setTimeout(()=>{
+		 		
+		 		window.parent.postMessage({"huichuang":1},src);
+
+		 	},2000)
+             
+        } 
+
+
+
+       var a = {
+		    user:"a",
+		    fn:function(i,j){
+		        console.log(this.user,i,j);
+		    }
+		}
+
+		console.log("-----call------");
+		var b = a.fn;
+		b.call(a,1,2);
+
+
+
+
+		console.log("-----apply------");
+		var c = a.fn;
+		c.apply({user:"c"},[3,4]);
+
+         
+       
+		console.log("-----bind------");
+     	var d = a.fn;
+     	var e = d.bind({user:"d"});
+     	e(5,6);
+
+     	var f = d.bind({user:"f"},7,8);
+     	f();
+
+
+
+
+	</script>
 </html>

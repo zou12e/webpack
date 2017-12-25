@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="//dn-maxfunweb.qbox.me/app/lib/react/build/jquery.min.js"></script>
+</head>
+<body>
+	
+	<!-- <iframe src="http://www.zourunze.com:8888/data"></iframe>  -->
+
+
+	<iframe id='f' src="http://zourunze.com:8888"></iframe>
+	
+	 <script type="text/javascript">
+
+
+	  var src = "http://zourunze.com:8888";
+
+	 	
+
+	 	window.onload = function () {
+	 		
+
+
+	 		var f = document.getElementById("f");
+
+
+	 		
+
+
+	 		var win = f.contentWindow;
+
+	 		win.postMessage({x:1},src);
+
+
+	 		
+
+	 	}
+
+	 	window.onmessage = function(e){ 
+
+	 			   console.log(e.origin);
+
+	 			   console.log(e.data)  
+	 	 }
+
+	 	 var x  = [1,2,3,4];
+	 	 var b  = x ;
+	 	 console.log(b);
+	 	 x = [1];
+	 	 console.info(b);
+
+
+
+	 	 var x  = [1,2,3,4];
+	 	 var b  = x ;
+	 	 console.log(x);
+	 	 b[0] = [0] ;
+	 	 console.log(x);
+
+	 	 var x  = {x:1}
+	 	 var b  = x ; 
+	 	 console.log(x);
+	 	 b.x = 0;
+	 	 console.log();
+
+
+	 	 
+	 </script>
+     
+</body>
+</html>
